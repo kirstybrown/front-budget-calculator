@@ -1,5 +1,6 @@
 import { FC, ChangeEvent, useState } from "react";
 import './App.css';
+import Expense from "./Components/Expense";
 import {IExpense} from './Interfaces';
 
 const App: FC = () => {
@@ -57,7 +58,11 @@ const App: FC = () => {
         </div>
         <button onClick={addExpense}>Add Expense</button>
       </div>
-      <div className='expense-list'></div>
+      <div className='expense-list'>
+        {expenseList.map((expense: IExpense, key: number) => {
+          return <Expense key={key} expense={expense} />;
+        })}
+      </div>
     </div>
   );
 }
