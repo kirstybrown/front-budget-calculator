@@ -30,6 +30,12 @@ const App: FC = () => {
     setCategory("");
   }
 
+  const deleteExpense = (expenseToDelete: string) : void => {
+    setExpenseList(expenseList.filter((expense) => {
+      return expense.expenseName !== expenseToDelete;
+    }))
+  }
+
   return (
     <div className="App">
       <div className='header'>
@@ -60,7 +66,7 @@ const App: FC = () => {
       </div>
       <div className='expense-list'>
         {expenseList.map((expense: IExpense, key: number) => {
-          return <Expense key={key} expense={expense} />;
+          return <Expense key={key} expense={expense} deleteExpense={deleteExpense}/>;
         })}
       </div>
     </div>
