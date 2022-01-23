@@ -4,7 +4,14 @@ import './App.css';
 const App: FC = () => {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <div className='header'>
+        <div className="input-container">
+          <input type="text" placeholder="Expense" />
+          <input type="number" placeholder="Amount" />
+        </div>
+        <button>Add Expense</button>
+      </div>
+      <div className='expense-list'></div>
     </div>
   );
 }
