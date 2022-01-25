@@ -1,6 +1,6 @@
 import { FC, ChangeEvent, useState } from "react";
 import './App.css';
-import Expense from "./Components/Expense";
+import Expense from "./components/expense.component";
 import {IExpense} from './Interfaces';
 
 const App: FC = () => {
