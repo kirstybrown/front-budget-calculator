@@ -49,22 +49,23 @@ const ExpenseInput: FC = () => {
   };
 
   return (
-    <div>
+    <div className="submit-form">
       {submitted ? (
         <div>
           <h4>Expense added successfully!</h4>
-          <button onClick={newExpense}>
+          <button className="btn btn-success" onClick={newExpense}>
             Add
           </button>
         </div>
       ) : (
         <div>
-          <div>
+          <div className="form-group">
             <label htmlFor="expenseName">Expense Name</label>
             <input
               type="text"
               id="expenseName"
               placeholder="Expense name"
+              className="form-control"
               required
               value={expense.expenseName}
               onChange={handleInputChange}
@@ -72,12 +73,13 @@ const ExpenseInput: FC = () => {
             />
           </div>
 
-          <div>
+          <div className="form-group">
             <label htmlFor="expenseCategory">Expense Category</label>
             <input
               type="text"
               id="expenseCategory"
               placeholder="Expense Category"
+              className="form-control"
               required
               value={expense.expenseCategory}
               onChange={handleInputChange}
@@ -85,12 +87,13 @@ const ExpenseInput: FC = () => {
             />
           </div>
 
-          <div>
+          <div className="form-group">
             <label htmlFor="expenseAmount">Amount</label>
             <input
               type="number"
               id="expenseAmount"
               placeholder="Amount"
+              className="form-control"
               required
               value={expense.expenseAmount}
               onChange={handleInputChange}
@@ -98,7 +101,7 @@ const ExpenseInput: FC = () => {
             />
           </div>
 
-          <button onClick={saveExpense}>
+          <button onClick={saveExpense} className="btn btn-success">
             Add Expense
           </button>
         </div>
