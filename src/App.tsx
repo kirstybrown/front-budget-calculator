@@ -1,5 +1,6 @@
+
+import { Routes, Route, Link } from "react-router-dom";
 import { FC } from "react";
-import React, { Switch, Route, Link } from "react-router-dom";
 import './App.css';
 import ExpenseCard from "./components/ExpenseCard";
 import ExpenseInput from "./components/ExpenseInput";
@@ -29,11 +30,11 @@ const App: FC = () => {
       </nav>
 
       <div>
-        <Switch>
-          <Route exact path={["/", "/expenses"]} component={ExpenseList} />
-          <Route exact path="/add" component={ExpenseInput} />
-          <Route exact path="/expenses/:id" component={ExpenseCard} />
-        </Switch>
+        <Routes>
+          <Route path={"/expenses"} element={ExpenseList} />
+          <Route path ="/add" element={ExpenseInput} />
+          <Route path="/expenses/:id" element={ExpenseCard} />
+        </Routes>
       </div>
 
     </div>
