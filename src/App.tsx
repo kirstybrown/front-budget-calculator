@@ -18,12 +18,12 @@ const App: FC = () => {
         </header>
         <div className="navbar-nav mr-auto">
           <li className="nav-item">
-            <Link to="/expenses" className="nav-link">
+            <Link to={"/expenses"} className="nav-link">
               Expenses
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/add" className="nav-link">
+            <Link to={"/add"} className="nav-link">
               Add
             </Link>
           </li>
@@ -34,7 +34,7 @@ const App: FC = () => {
         <Routes>
           <Route path="/expenses" element={<ExpenseList />} />
           <Route path ="/add" element={<ExpenseInput />} />
-          <Route path="/expenses/:expenseName" element={<ExpenseCard id="id"/>} />
+          <Route path="/expenses/:id" element={<ExpenseCard id="id"/>} />
         </Routes>
       </div>
 

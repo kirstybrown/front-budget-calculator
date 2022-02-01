@@ -13,7 +13,7 @@ const ExpenseInput: FC = () => {
   const [expense, setExpense] = useState<ExpenseInterface>(initialExpenseState);
   const [submitted, setSubmitted] = useState<boolean>(false);
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setExpense({ ...expense, [name]: value });
   };
@@ -52,7 +52,7 @@ const ExpenseInput: FC = () => {
         <div>
           <h4>Expense submitted successfully!</h4>
           <button className="btn btn-success" onClick={newExpense}>
-            Submit
+            Add Another Expense
           </button>
         </div>
       ) : (
@@ -62,7 +62,6 @@ const ExpenseInput: FC = () => {
             <input
               type="text"
               id="name"
-              placeholder="Expense name"
               className="form-control"
               required
               value={expense.name}
@@ -76,7 +75,6 @@ const ExpenseInput: FC = () => {
             <input
               type="text"
               id="category"
-              placeholder="Expense Category"
               className="form-control"
               required
               value={expense.category}
@@ -90,7 +88,6 @@ const ExpenseInput: FC = () => {
             <input
               type="number"
               id="amount"
-              placeholder="Amount"
               className="form-control"
               required
               value={expense.amount}
@@ -100,7 +97,7 @@ const ExpenseInput: FC = () => {
           </div>
 
           <button onClick={saveExpense} className="btn btn-success">
-            Add Expense
+            Submit
           </button>
         </div>
       )}

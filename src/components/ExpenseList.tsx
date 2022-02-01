@@ -2,6 +2,7 @@ import { FC, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ExpenseService from '../services/ExpenseService';
 import ExpenseInterface from '../domain/Expense';
+import ExpenseCard from "./ExpenseCard";
 
 const ExpenseList: FC = () => {
   const [ expenses, setExpenses ] = useState<Array<ExpenseInterface>>([]);
@@ -80,7 +81,7 @@ const ExpenseList: FC = () => {
             </div>
 
             <Link
-              to={"/expenses/" + currentExpense.id}
+              to={"/expenses/" + currentExpense.id} // Need to change this link - where does it go??
               className="badge badge-warning"
             >
             Edit

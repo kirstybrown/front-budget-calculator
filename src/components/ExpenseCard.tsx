@@ -1,5 +1,5 @@
 import { FC, useState, useEffect, ChangeEvent } from "react";
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import ExpenseService from "../services/ExpenseService";
 import ExpenseInterface from '../domain/Expense';
@@ -10,8 +10,7 @@ interface Props {
 
 const ExpenseCard: FC<Props> = (props: Props) => {
 
-  
-  const { id } = useParams<string>();
+
 
   const initialExpenseState = {
     id: null,
