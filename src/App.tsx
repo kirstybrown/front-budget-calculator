@@ -13,17 +13,17 @@ const App: FC = () => {
   return (
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <a href="/expenses" className="navbar-brand">
-          Budget Magic
-        </a>
+        <header className="navbar-brand">
+          <h1>Budget Magic</h1>
+        </header>
         <div className="navbar-nav mr-auto">
           <li className="nav-item">
-            <Link to={"/expenses"} className="nav-link">
+            <Link to="/expenses" className="nav-link">
               Expenses
             </Link>
           </li>
           <li className="nav-item">
-            <Link to={"/add"} className="nav-link">
+            <Link to="/add" className="nav-link">
               Add
             </Link>
           </li>
@@ -32,9 +32,9 @@ const App: FC = () => {
 
       <div className="container mt-3">
         <Routes>
-          <Route path={"/expenses"} element={ExpenseList} />
-          <Route path ="/add" element={ExpenseInput} />
-          <Route path="/expenses/:id" element={ExpenseCard} />
+          <Route path="/expenses" element={<ExpenseList />} />
+          <Route path ="/add" element={<ExpenseInput />} />
+          <Route path="/expenses/:expenseName" element={<ExpenseCard id="id"/>} />
         </Routes>
       </div>
 

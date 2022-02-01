@@ -6,9 +6,9 @@ const ExpenseInput: FC = () => {
 
   const initialExpenseState = {
     id: null,
-    expenseName: "",
-    expenseAmount: 0,
-    expenseCategory: "",
+    name: "",
+    amount: 0,
+    category: "",
     published: false
   };
   const [expense, setExpense] = useState<ExpenseInterface>(initialExpenseState);
@@ -21,18 +21,18 @@ const ExpenseInput: FC = () => {
 
   const saveExpense = () => {
     let data = {
-      expenseName: expense.expenseName,
-      expenseAmount: expense.expenseAmount,
-      expenseCategory: expense.expenseCategory
+      name: expense.name,
+      amount: expense.amount,
+      category: expense.category
     };
 
     ExpenseService.create(data)
       .then((response: any) => {
         setExpense({
           id: response.data.id,
-          expenseName: response.data.expenseName,
-          expenseAmount: response.data.expenseAmount,
-          expenseCategory: response.data.expenseCategory,
+          name: response.data.name,
+          amount: response.data.amount,
+          category: response.data.category,
           published: response.data.published
         });
         setSubmitted(true);
@@ -52,52 +52,52 @@ const ExpenseInput: FC = () => {
     <div className="submit-form">
       {submitted ? (
         <div>
-          <h4>Expense added successfully!</h4>
+          <h4>Expense submitted successfully!</h4>
           <button className="btn btn-success" onClick={newExpense}>
-            Add
+            Submit
           </button>
         </div>
       ) : (
         <div>
           <div className="form-group">
-            <label htmlFor="expenseName">Expense Name</label>
+            <label htmlFor="name">Expense Name</label>
             <input
               type="text"
-              id="expenseName"
+              id="name"
               placeholder="Expense name"
               className="form-control"
               required
-              value={expense.expenseName}
+              value={expense.name}
               onChange={handleInputChange}
-              name="expenseName"
+              name="name"
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="expenseCategory">Expense Category</label>
+            <label htmlFor="category">Expense Category</label>
             <input
               type="text"
-              id="expenseCategory"
+              id="category"
               placeholder="Expense Category"
               className="form-control"
               required
-              value={expense.expenseCategory}
+              value={expense.category}
               onChange={handleInputChange}
-              name="expenseCategory"
+              name="category"
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="expenseAmount">Amount</label>
+            <label htmlFor="amount">Amount</label>
             <input
               type="number"
-              id="expenseAmount"
+              id="amount"
               placeholder="Amount"
               className="form-control"
               required
-              value={expense.expenseAmount}
+              value={expense.amount}
               onChange={handleInputChange}
-              name="expenseAmount"
+              name="amount"
             />
           </div>
 

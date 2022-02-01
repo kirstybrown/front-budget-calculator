@@ -1,4 +1,20 @@
-.App {
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+}
+
+.submit-form {
+  max-width: 300px;
+  margin: auto;
+}
+
+.edit-form {
+  max-width: 300px;
+  margin: auto;
+}
+
+/* .App {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -92,4 +108,4 @@ body {
   border-bottom-right-radius: 8px;
   color: white;
   cursor: pointer;
-}
+} */
