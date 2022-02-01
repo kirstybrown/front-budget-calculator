@@ -3,5 +3,4 @@ export default interface ExpenseInterface {
     name: string;
     amount: number;
     category: string;
-    published?: boolean;
 }

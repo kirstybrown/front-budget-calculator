@@ -17,8 +17,7 @@ const ExpenseCard: FC<Props> = (props: Props) => {
     id: null,
     name: "",
     amount: 0,
-    category: "",
-    published: false
+    category: ""
   };
   const [currentExpense, setCurrentExpense] = useState<ExpenseInterface>(initialExpenseState);
   const [message, setMessage] = useState<string>("");
@@ -35,7 +34,6 @@ const ExpenseCard: FC<Props> = (props: Props) => {
   };
 
   useEffect(() => {
-
     getExpense(currentExpense.id);
   }, [currentExpense]);
 
@@ -44,26 +42,16 @@ const ExpenseCard: FC<Props> = (props: Props) => {
     setCurrentExpense({ ...currentExpense, [id]: id });
   };
 
- /*  const updatePublished = (status: boolean) => {
-    let data = {
-      id: currentExpense.id,
-      name: currentExpense.name,
-      amount: currentExpense.amount,
-      category: currentExpense.category,
-      published: status
-    };
-  
-
-    ExpenseService.update(currentExpense.id, data)
+    ExpenseService.update(currentExpense.id, currentExpense)
       .then((response: any) => {
         console.log(response.data);
-        setCurrentExpense({ ...currentExpense, published: status });
+        setCurrentExpense({ ...currentExpense});
         setMessage("The status was updated successfully!");
       })
       .catch((e: Error) => {
         console.log(e);
       });
-  }; */
+
 
 const updateExpense = () => {
   ExpenseService.update(currentExpense.id, currentExpense)
@@ -128,31 +116,13 @@ return (
               />
             </div>
 
-            <div className="form-group">
-              <label>
-                <strong>Status:</strong>
-              </label>
-              {currentExpense.published ? "Published" : "Pending"}
-            </div>
           </form>
 
-         {/*  {currentExpense.published ? (
-            <button
-              className="badge badge-primary mr-2"
-              onClick={() => updatePublished(false)}
-            >
-              UnPublish
-            </button>
-          ) : (
-            <button
-              className="badge badge-primary mr-2"
-              onClick={() => updatePublished(true)}
-            >
-              Publish
-            </button>
-          )} */}
-
-          <button className="badge badge-danger mr-2" onClick={deleteExpense}>
+          <button 
+            type="submit" 
+            className="badge badge-danger mr-2" 
+            onClick={deleteExpense}
+          >
             Delete
           </button>
 

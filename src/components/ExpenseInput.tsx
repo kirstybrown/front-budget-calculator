@@ -8,8 +8,7 @@ const ExpenseInput: FC = () => {
     id: null,
     name: "",
     amount: 0,
-    category: "",
-    published: false
+    category: ""
   };
   const [expense, setExpense] = useState<ExpenseInterface>(initialExpenseState);
   const [submitted, setSubmitted] = useState<boolean>(false);
@@ -33,7 +32,6 @@ const ExpenseInput: FC = () => {
           name: response.data.name,
           amount: response.data.amount,
           category: response.data.category,
-          published: response.data.published
         });
         setSubmitted(true);
         console.log(response.data);

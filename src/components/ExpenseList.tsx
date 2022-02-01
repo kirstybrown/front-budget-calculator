@@ -25,11 +25,11 @@ const ExpenseList: FC = () => {
       });
   };
 
- /*  const refreshList = () => {
+ const refreshList = () => {
     retrieveExpenses();
     setCurrentExpense(null);
     setCurrentIndex(-1);
-  }; */
+  };
 
   const setActiveExpense = (expense: ExpenseInterface, index: number) => {
     setCurrentExpense(expense);
@@ -77,12 +77,6 @@ const ExpenseList: FC = () => {
                   <strong>Amount:</strong>
               </label>{" "}
               {currentExpense.amount}
-            </div>
-            <div>
-              <label>
-                  <strong>Status:</strong>
-              </label>{" "}
-              {currentExpense.published ? "Published" : "Pending"}
             </div>
 
             <Link
